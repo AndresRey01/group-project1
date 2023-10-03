@@ -1,9 +1,10 @@
-const ts = "1696296053511";
-const publicKey = "4f8605997b56aaa26b6a6841d247a894";
-const hashVal = "f8c1d9d4323bdd3e48f6f09a3c88c7c9";
+let input = document.getElementById("input-box");
+let button = document.getElementById("submit-button");
+let showContainer = document.getElementById("show-container");
+let listContainer = document.querySelector(".list");
 
-// Construct the URL for the Marvel API request
-const apiUrl = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hashVal}`;
+let date = new Date();
+console.log(date.getTime());
 
 // Make the API request using the fetch function
 fetch(apiUrl)
@@ -24,3 +25,29 @@ fetch(apiUrl)
         // Handle errors here
     });
 
+button.addEventListener(
+  "click",
+  (getRsult = async () => {
+    if (input.value.trim().length < 1) {
+      alert("Input cannot be blank");
+    }
+    showContainer.innerHTML = "";
+    const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
+
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    jsonData.data["results"].forEach((element) => {
+      showContainer.innerHTML = `<div class="card-container">
+        <div class="container-character-image">
+        <img src="${
+          element.thumbnail["path"] + "." + element.thumbnail["extension"]
+        }"/></div>
+        <div class="character-name">${element.name}</div>
+        <div class="character-description">${element.description}</div>
+        </div>`;
+    });
+  })
+);
+window.onload = () => {
+  getRsult();
+};
