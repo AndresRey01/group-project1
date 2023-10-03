@@ -4,32 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Search Engine</title>
+    <title>Marvel API App</title>
 </head>
 
 <body>
-    <header class="heading">
-        <h1>Marvel Search Engine</h1>
-    </header>
-    <main class="page">
-        <form action="" method="GET">
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="query" placeholder="Enter a Marvel Character">
-            <button class="button is-danger" id="search-btn">Search</button>
-        </form>
-      
-    </main>
-
-
-
-
-
-
-
-
+    <div class="container">
+        <div class="input-container">
+            <input type="text" class="input-box" value="iron man" id="input-box" />
+            <button class="button" id="submit-button">Submit</button>
+        </div>
+        <div class="list"></div>
+      <div class="display-container" id="show-container"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 
