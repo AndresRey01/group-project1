@@ -7,18 +7,20 @@ const apiUrl = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=
 
 // Make the API request using the fetch function
 fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-    // Handle the fetched data here
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-    // Handle errors here
-  });
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+
+
+        // Handle the fetched data here
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+        // Handle errors here
+    });
 
