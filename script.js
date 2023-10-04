@@ -57,8 +57,7 @@ button.addEventListener(
     jsonData.data["results"].forEach((element) => {
       showContainer.innerHTML = `<div class="card-container">
         <div class="container-character-image">
-        <img src="${
-          element.thumbnail["path"] + "." + element.thumbnail["extension"]
+        <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]
         }"/></div>
         <div class="character-name">${element.name}</div>
         <div class="character-description">${element.description}</div>
@@ -69,3 +68,18 @@ button.addEventListener(
 window.onload = () => {
   getRsult();
 };
+
+/* fetching time from users ip address and displaying on html */
+
+fetch("http://worldtimeapi.org/api/ip")
+  .then(response => {
+    return response.json();
+
+
+
+
+  }).then((apidata) => {
+    console.log(new Date(apidata.datetime).toLocaleString())
+    let clock = document.getElementById('time-container')
+    clock.innerText = new Date(apidata.datetime).toLocaleString()
+  });
