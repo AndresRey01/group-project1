@@ -74,11 +74,13 @@ window.onload = () => {
 fetch("http://worldtimeapi.org/api/ip")
   .then(response => {
     return response.json();
+  }
+  
+  
 
 
 
-
-  }).then((apidata) => {
+  ).then((apidata) => {
     console.log(new Date(apidata.datetime).toLocaleString())
     let clock = document.getElementById('time-container')
     clock.innerText = new Date(apidata.datetime).toLocaleString()
