@@ -1,6 +1,6 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 5px;
+    margin: 5px;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
@@ -19,6 +19,7 @@
     right: 50%;
     top: 1em;
     border-radius: 1em;
+    box-shadow: 10px 12px;
   }
   .input-container {
     display: grid;
@@ -41,6 +42,11 @@
     border-radius: 0.5em;
     cursor: pointer;
   }
+
+  .button:hover {
+    background-color: #f0b63a;
+}
+  
   .display-container {
     padding: 1em;
   }
@@ -86,4 +92,15 @@
   .autocomplete-items:hover {
     background-color: #ddd;
     color: #171821;
+  }
+
+  .clock-container {
+    display:flex;
+    height: 100px;
+    width: 200px;
+    border:solid #131950;
+    border-radius: 10%;
+    background: white;
+    padding: 30px;
+    border-width: thick;
   }
