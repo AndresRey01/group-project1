@@ -5,6 +5,9 @@
     font-family: "Poppins", sans-serif;
   }
   body {
+    background-image: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fHww&auto=");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: lightblue;
   }
   .container {
