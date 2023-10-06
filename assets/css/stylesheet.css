@@ -5,6 +5,9 @@
     font-family: "Poppins", sans-serif;
   }
   body {
+    background-image: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fHww&auto=");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: lightblue;
   }
   .container {
@@ -19,6 +22,7 @@
     right: 50%;
     top: 1em;
     border-radius: 1em;
+    box-shadow: 10px 12px;
   }
   .input-container {
     display: grid;
@@ -41,6 +45,11 @@
     border-radius: 0.5em;
     cursor: pointer;
   }
+
+  .button:hover {
+    background-color: #f0b63a;
+}
+  
   .display-container {
     padding: 1em;
   }
@@ -86,4 +95,15 @@
   .autocomplete-items:hover {
     background-color: #ddd;
     color: #171821;
+  }
+
+  .clock-container {
+    display:flex;
+    height: 100px;
+    width: 200px;
+    border:solid #131950;
+    border-radius: 10%;
+    background: white;
+    padding: 30px;
+    border-width: thick;
   }
