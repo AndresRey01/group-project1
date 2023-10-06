@@ -68,20 +68,46 @@ button.addEventListener(
 window.onload = () => {
   getRsult();
 };
+// Function to save searches to local storage
+
+function saveSearchToLocalStorage(searchTerm) {
+  let searches = JSON.parse(localStorage.getItem("searches")) || [];
+  searches.push(searchTerm);
+  localStorage.setItem("searches", JSON.stringify(searches));
+}
+// Function to retrieve and display previous searches from local storage
+
+function displayPreviousSearches() {
+  let searches = JSON.parse(localStorage.getItem("searches")) || [];
+  searches.forEach((search) => {
+  // Create and append a list item for each search term
+    let li = document.createElement("li");
+    li.textContent = search;
+    listContainer.appendChild(li);
+  });
+}
+
+displayPreviousSearches();
+
+button.addEventListener("click", async () => {
+
+  saveSearchToLocalStorage(input.value.trim());
+});
 
 /* fetching time from users ip address and displaying on html */
 
-fetch("http://worldtimeapi.org/api/ip")
-  .then(response => {
-    return response.json();
-  }
-  
-  
+function updateClock() {
+  fetch("http://worldtimeapi.org/api/ip")
+    .then(response => response.json())
+    .then((apidata) => {
+      const currentTime = new Date(apidata.datetime).toLocaleString();
+      let clock = document.getElementById('time-container');
+      clock.innerText = currentTime;
+    });
+}
 
+// Call updateClock initially to set the clock when the page loads
+updateClock();
 
-
-  ).then((apidata) => {
-    console.log(new Date(apidata.datetime).toLocaleString())
-    let clock = document.getElementById('time-container')
-    clock.innerText = new Date(apidata.datetime).toLocaleString()
-  });
+// Update the clock every second (1000 milliseconds)
+setInterval(updateClock, 1000);
