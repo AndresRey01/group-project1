@@ -97,7 +97,7 @@ button.addEventListener("click", async () => {
 /* fetching time from users ip address and displaying on html */
 
 function updateClock() {
-  fetch("http://worldtimeapi.org/api/ip")
+  fetch("https://worldtimeapi.org/api/ip")
     .then(response => response.json())
     .then((apidata) => {
       const currentTime = new Date(apidata.datetime).toLocaleString();
