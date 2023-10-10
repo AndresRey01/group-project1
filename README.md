@@ -14,3 +14,5 @@ The API's used for this website were the Marvel api which allows you to search f
 Preview of the Page below:
 
 ![Screenshot_20231005_074024](https://github.com/AndresRey01/group-project1/assets/140764079/2efd15b4-c7e1-4436-9091-6a755f31b8cd)
+
+https://andresrey01.github.io/group-project1/
